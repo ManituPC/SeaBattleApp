@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00134B3F2343E477004981B0 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00134B3E2343E477004981B0 /* Loader.storyboard */; };
+		00134B412343E49E004981B0 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00134B402343E49E004981B0 /* LoaderViewController.swift */; };
+		00134B432343E4E7004981B0 /* GameFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00134B422343E4E7004981B0 /* GameFieldViewController.swift */; };
+		00134B452343E4FA004981B0 /* GameField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00134B442343E4FA004981B0 /* GameField.storyboard */; };
+		0085D1E62343EC1400F9DB99 /* FieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0085D1E42343EC1400F9DB99 /* FieldViewCell.swift */; };
+		0085D1E72343EC1400F9DB99 /* FieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0085D1E52343EC1400F9DB99 /* FieldViewCell.xib */; };
 		00D8C6872340FEDC001554C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8C6862340FEDC001554C0 /* AppDelegate.swift */; };
 		00D8C68B2340FEDC001554C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8C68A2340FEDC001554C0 /* ViewController.swift */; };
 		00D8C68E2340FEDC001554C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D8C68C2340FEDC001554C0 /* Main.storyboard */; };
@@ -15,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00134B3E2343E477004981B0 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
+		00134B402343E49E004981B0 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		00134B422343E4E7004981B0 /* GameFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldViewController.swift; sourceTree = "<group>"; };
+		00134B442343E4FA004981B0 /* GameField.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameField.storyboard; sourceTree = "<group>"; };
+		0085D1E42343EC1400F9DB99 /* FieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewCell.swift; sourceTree = "<group>"; };
+		0085D1E52343EC1400F9DB99 /* FieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldViewCell.xib; sourceTree = "<group>"; };
 		00D8C6832340FEDC001554C0 /* secondIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D8C6862340FEDC001554C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D8C68A2340FEDC001554C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00134B3D2343E38A004981B0 /* GameField */ = {
+			isa = PBXGroup;
+			children = (
+				00134B422343E4E7004981B0 /* GameFieldViewController.swift */,
+				00134B442343E4FA004981B0 /* GameField.storyboard */,
+				0085D1E42343EC1400F9DB99 /* FieldViewCell.swift */,
+				0085D1E52343EC1400F9DB99 /* FieldViewCell.xib */,
+			);
+			path = GameField;
+			sourceTree = "<group>";
+		};
 		00D8C67A2340FEDC001554C0 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +77,41 @@
 		00D8C6852340FEDC001554C0 /* secondIOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				00F1ADB22343D61D00738A59 /* Screens */,
 				00D8C6862340FEDC001554C0 /* AppDelegate.swift */,
-				00D8C68A2340FEDC001554C0 /* ViewController.swift */,
-				00D8C68C2340FEDC001554C0 /* Main.storyboard */,
 				00D8C68F2340FEDD001554C0 /* Assets.xcassets */,
 				00D8C6912340FEDD001554C0 /* LaunchScreen.storyboard */,
 				00D8C6942340FEDD001554C0 /* Info.plist */,
 			);
 			path = secondIOSApp;
+			sourceTree = "<group>";
+		};
+		00F1ADB22343D61D00738A59 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				00F1ADB32343D62A00738A59 /* Main */,
+				00F1ADB42343D63D00738A59 /* Loader */,
+				00134B3D2343E38A004981B0 /* GameField */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		00F1ADB32343D62A00738A59 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				00D8C68A2340FEDC001554C0 /* ViewController.swift */,
+				00D8C68C2340FEDC001554C0 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		00F1ADB42343D63D00738A59 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				00134B402343E49E004981B0 /* LoaderViewController.swift */,
+				00134B3E2343E477004981B0 /* Loader.storyboard */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D8C6932340FEDD001554C0 /* LaunchScreen.storyboard in Resources */,
+				0085D1E72343EC1400F9DB99 /* FieldViewCell.xib in Resources */,
 				00D8C6902340FEDD001554C0 /* Assets.xcassets in Resources */,
 				00D8C68E2340FEDC001554C0 /* Main.storyboard in Resources */,
+				00134B3F2343E477004981B0 /* Loader.storyboard in Resources */,
+				00134B452343E4FA004981B0 /* GameField.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0085D1E62343EC1400F9DB99 /* FieldViewCell.swift in Sources */,
 				00D8C68B2340FEDC001554C0 /* ViewController.swift in Sources */,
+				00134B432343E4E7004981B0 /* GameFieldViewController.swift in Sources */,
+				00134B412343E49E004981B0 /* LoaderViewController.swift in Sources */,
 				00D8C6872340FEDC001554C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
