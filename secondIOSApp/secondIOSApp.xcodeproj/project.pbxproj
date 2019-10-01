@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00D8C6872340FEDC001554C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8C6862340FEDC001554C0 /* AppDelegate.swift */; };
-		00D8C6892340FEDC001554C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8C6882340FEDC001554C0 /* SceneDelegate.swift */; };
 		00D8C68B2340FEDC001554C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8C68A2340FEDC001554C0 /* ViewController.swift */; };
 		00D8C68E2340FEDC001554C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D8C68C2340FEDC001554C0 /* Main.storyboard */; };
 		00D8C6902340FEDD001554C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D8C68F2340FEDD001554C0 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		00D8C6832340FEDC001554C0 /* secondIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D8C6862340FEDC001554C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00D8C6882340FEDC001554C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		00D8C68A2340FEDC001554C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		00D8C68D2340FEDC001554C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00D8C68F2340FEDD001554C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				00D8C6862340FEDC001554C0 /* AppDelegate.swift */,
-				00D8C6882340FEDC001554C0 /* SceneDelegate.swift */,
 				00D8C68A2340FEDC001554C0 /* ViewController.swift */,
 				00D8C68C2340FEDC001554C0 /* Main.storyboard */,
 				00D8C68F2340FEDD001554C0 /* Assets.xcassets */,
@@ -140,7 +137,6 @@
 			files = (
 				00D8C68B2340FEDC001554C0 /* ViewController.swift in Sources */,
 				00D8C6872340FEDC001554C0 /* AppDelegate.swift in Sources */,
-				00D8C6892340FEDC001554C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,6 +282,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = secondIOSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,7 +290,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.learnappmaking.secondIOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = secondIOSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.learnappmaking.secondIOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
