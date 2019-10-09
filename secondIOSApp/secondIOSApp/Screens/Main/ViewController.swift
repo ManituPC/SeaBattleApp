@@ -9,14 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var uiView: IntroductionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(click))
+//        uiView.addGestureRecognizer(tap)
         
-        self.navigationItem.title = "String"
+        //self.navigationItem.title = "String"
+        
     }
 
-
+    
+//    @objc func click() {
+//        print("11111")
+//    }
 }
 
