@@ -15,24 +15,9 @@
                     <view key="view" contentMode="scaleToFill" id="TRD-fS-Git">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7K-tH-ff8" customClass="GameFieldSelf" customModule="secondIOSApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="hyp-Me-62t" firstAttribute="bottom" secondItem="E7K-tH-ff8" secondAttribute="bottom" id="jLl-OO-204"/>
-                            <constraint firstItem="E7K-tH-ff8" firstAttribute="leading" secondItem="hyp-Me-62t" secondAttribute="leading" id="ms1-TC-ZTJ"/>
-                            <constraint firstItem="E7K-tH-ff8" firstAttribute="top" secondItem="hyp-Me-62t" secondAttribute="top" id="t7n-p4-BKF"/>
-                            <constraint firstItem="E7K-tH-ff8" firstAttribute="trailing" secondItem="hyp-Me-62t" secondAttribute="trailing" id="xUo-3q-dXI"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hyp-Me-62t"/>
                     </view>
-                    <connections>
-                        <outlet property="uiView" destination="E7K-tH-ff8" id="IJY-Zz-SPX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69E-q5-Mh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
