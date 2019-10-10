@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var uiView: IntroductionView!
+    @IBOutlet weak var uiView: GameFieldSelf!
     
     override func viewDidLoad() {
         super.viewDidLoad()

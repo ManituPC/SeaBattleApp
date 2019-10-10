@@ -1,71 +1,77 @@
 //
-//  IntroductionView.swift
+//  BaseView.swift
 //  secondIOSApp
 //
-//  Created by denis.chicherin on 10/3/19.
+//  Created by denis.chicherin on 10/10/19.
 //  Copyright © 2019 LearnAppMaking. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable
-class IntroductionView: UIView {
+
+class BaseView: UIView {
     
-    let gameField1 = GameField()
-    let gameField2 = GameField()
+    let gameField = GameField()
     var squareID = 0
     
-    override func draw(_ rect: CGRect) {
-        let rect1 = CGRect(x: 0, y: 0, width: rect.width, height: rect.height / 2)
-        let rect2 = CGRect(x: 0, y: rect.height / 2, width: rect.width, height: rect.height / 2)
-                
-        drawGameField(rect: rect1, gameField: gameField1)
-        drawGameField(rect: rect2, gameField: gameField2)
-        
-        print("$$$$$$1 \(gameField1.fieldsList.count)")
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
+        var touch = UITouch()
+        if let currentTouch = touches.first {
+            touch = currentTouch
+        }
         let position = touch.location(in: self)
         
         getSquare(position: position)
     }
     
+
     // draw Game filed
-    private func drawGameField(rect: CGRect, gameField: GameField) {
+    func drawGameField(rect: CGRect) {
         let outPadding: CGFloat = 20
-        let squareWigth: CGFloat = (rect.height - outPadding * 2) / 10
-        let x: CGFloat = rect.origin.x + (rect.width - squareWigth * 10) / 2
+        let squareWigth: CGFloat = (rect.height - outPadding * 2) / CGFloat(gameField.size.height)
+        let x: CGFloat = rect.origin.x + (rect.width - squareWigth * CGFloat(gameField.size.wigth)) / 2
         let y: CGFloat = rect.origin.y + outPadding
-        
+                
         var color = UIColor.darkGray
+        var index = 0
 
         var row = gameField.size.height
         var column = gameField.size.wigth
         var square = GameField.Field(blockId: 1, coordinateBegin: (x, y))
         square.wigth = squareWigth
-        
+                
         while row > 0 {
-            gameField.fieldsList.append(square)
+            if gameField.fieldsList.count < gameField.size.height * gameField.size.wigth {
+                gameField.fieldsList.append(square)
+            } else {
+                square = gameField.fieldsList[index]
+            }
             
             let pathRect = CGRect(x: square.coordinateBegin.x, y: square.coordinateBegin.y, width: squareWigth, height: squareWigth)
             let path = UIBezierPath(rect: pathRect)
             
-            if square.blockId == squareID {
-                color = UIColor.red
+            if square.isFieldTap {
+                color = .red
+                gameField.fieldsList[squareID - 1].color = color
                 color.setFill()
                 path.fill()
             } else {
-                color = UIColor.darkGray
+                color = .darkGray
                 path.lineWidth = 1
                 color.setStroke()
                 path.stroke()
             }
-            
+
             square.coordinateBegin.x += squareWigth
-            square.blockId += 1
+            if square.blockId < gameField.size.height * gameField.size.wigth {
+                square.blockId += 1
+            }
             column -= 1
+            
+            if index < gameField.size.height * gameField.size.wigth - 1 {
+                index += 1
+            }
             
             if column == 0 {
                 square.coordinateBegin.x = rect.origin.x + (rect.width - squareWigth * 10) / 2
@@ -74,19 +80,29 @@ class IntroductionView: UIView {
                 column = gameField.size.wigth
             }
         }
+        
+        index = 0
     }
     
-    private func getSquare(position: CGPoint) {
-        for square in gameField1.fieldsList {
+    func getSquare(position: CGPoint) {
+        for i in 0...gameField.fieldsList.count - 1 {
+            let square = gameField.fieldsList[i]
             if position.x > square.coordinateBegin.x && position.x < square.coordinateBegin.x + square.wigth {
                 if position.y > square.coordinateBegin.y && position.y < square.coordinateBegin.y + square.wigth {
-                    print("square id = \(square.blockId)")
                     squareID = square.blockId
-                    gameField1.fieldsList.removeAll()
-                    updateDrawing()
+                    print("[DEBUG] isTap for squareID \(squareID)")
+                    gameField.fieldsList = gameField.fieldsList.map {
+                        var v = $0
+                        if $0.blockId == squareID {
+                            v.isFieldTap = !v.isFieldTap
+                        }
+                        return v
+                    }
+                    break
                 }
             }
         }
+        updateDrawing()
     }
     
     func updateDrawing() {

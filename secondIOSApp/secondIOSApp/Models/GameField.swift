@@ -21,11 +21,11 @@ class GameField {
     }
     
     struct Field {
-//        let isFieldEmpty: Bool
+        var isFieldTap = false
         var blockId: Int
         var coordinateBegin: (x: CGFloat, y: CGFloat)
         var wigth: CGFloat = 30
-//        let padding: CGFloat
+        var color: UIColor?
     }
 }
 
