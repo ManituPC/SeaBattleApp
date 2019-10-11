@@ -82,6 +82,24 @@ class BaseView: UIView {
         }
         
         index = 0
+        
+        drawBoat(rect: rect)
+    }
+    
+    func drawBoat(rect: CGRect) {
+        let color = UIColor.yellow
+
+        if gameField.boadsList.count > 0 {
+            for boat in gameField.boadsList {
+                let number = Int.random(in: 0 ..< 99)
+                boat.coordinate = gameField.fieldsList[number].coordinateBegin
+                
+                let pathRect = CGRect(x: boat.coordinate.x, y: boat.coordinate.y, width: gameField.fieldsList[number].wigth, height: gameField.fieldsList[number].wigth)
+                let path = UIBezierPath(rect: pathRect)
+                color.setFill()
+                path.fill()
+            }
+        }
     }
     
     func getSquare(position: CGPoint) {

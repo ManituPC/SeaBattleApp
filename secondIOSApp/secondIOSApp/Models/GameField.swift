@@ -12,7 +12,7 @@ import UIKit
 
 class GameField {
     let size = (height: 10, wigth: 10)
-    var boadsList = [Boad]()
+    var boadsList = [Boat]()
     var fieldsList = [Field]()
     
     struct Point {

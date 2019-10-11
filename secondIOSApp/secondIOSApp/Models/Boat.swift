@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 
 class Boat {
     var size = 0
-    let isVertical = true
-    let coordinate = Set<Int>()
+    var isVertical = true
+    var coordinate: (x: CGFloat, y: CGFloat) = (0, 0)
     var isAlive = true
 }

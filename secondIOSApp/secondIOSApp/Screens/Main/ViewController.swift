@@ -17,21 +17,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        uiViewSelf = GameFieldSelfView()
-//        uiViewTarget = GameFieldTargetView()
-//        
-//        let screenRect = UIScreen.main.bounds
-//        let screenWidth = screenRect.size.width
-//        let screenHeight = screenRect.size.height
-//        
-//        uiViewSelf.frame = CGRect(x: 20, y: 20, width: screenWidth - 40, height: screenHeight / 2 - 20)
-//        uiViewSelf.backgroundColor = .white
-//        uiViewTarget.frame = CGRect(x: 20, y: screenHeight / 2, width: screenWidth - 40, height: screenHeight / 2 - 20)
-//        uiViewTarget.backgroundColor = .white
-//
-//        view.backgroundColor = .purple
-//        view.addSubview(uiViewSelf)
-//        view.addSubview(uiViewTarget)
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
+        
+        uiViewSelf = GameFieldSelfView()
+        uiViewTarget = GameFieldTargetView()
+        
+        uiViewSelf.gameField.boadsList = uiViewSelf.addBoats()
+    
+        uiViewSelf.frame = CGRect(x: 20, y: 20, width: screenWidth - 40, height: screenHeight / 2 - 20)
+        uiViewSelf.backgroundColor = .white
+        uiViewTarget.frame = CGRect(x: 20, y: screenHeight / 2, width: screenWidth - 40, height: screenHeight / 2 - 20)
+        uiViewTarget.backgroundColor = .white
+
+        view.backgroundColor = .purple
+        view.addSubview(uiViewSelf)
+        view.addSubview(uiViewTarget)
     }
 }
 
