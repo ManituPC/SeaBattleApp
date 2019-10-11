@@ -12,14 +12,15 @@
 		00134B432343E4E7004981B0 /* GameFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00134B422343E4E7004981B0 /* GameFieldViewController.swift */; };
 		00134B452343E4FA004981B0 /* GameField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00134B442343E4FA004981B0 /* GameField.storyboard */; };
 		0013A43A234C765500A2D508 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0013A439234C765500A2D508 /* GameField.swift */; };
-		001A5FA4234FA659004B4206 /* GameFieldTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A5FA3234FA659004B4206 /* GameFieldTarget.swift */; };
+		001A5FA4234FA659004B4206 /* GameFieldTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A5FA3234FA659004B4206 /* GameFieldTargetView.swift */; };
 		001A5FA6234FA6AC004B4206 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A5FA5234FA6AC004B4206 /* BaseView.swift */; };
+		001C104523509BB900539282 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C104423509BB900539282 /* Boat.swift */; };
 		00D8C6872340FEDC001554C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8C6862340FEDC001554C0 /* AppDelegate.swift */; };
 		00D8C68B2340FEDC001554C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8C68A2340FEDC001554C0 /* ViewController.swift */; };
 		00D8C68E2340FEDC001554C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D8C68C2340FEDC001554C0 /* Main.storyboard */; };
 		00D8C6902340FEDD001554C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D8C68F2340FEDD001554C0 /* Assets.xcassets */; };
 		00D8C6932340FEDD001554C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D8C6912340FEDD001554C0 /* LaunchScreen.storyboard */; };
-		00F803FA234662A200C8CECB /* GameFieldSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F803F9234662A200C8CECB /* GameFieldSelf.swift */; };
+		00F803FA234662A200C8CECB /* GameFieldSelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F803F9234662A200C8CECB /* GameFieldSelfView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		00134B422343E4E7004981B0 /* GameFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldViewController.swift; sourceTree = "<group>"; };
 		00134B442343E4FA004981B0 /* GameField.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameField.storyboard; sourceTree = "<group>"; };
 		0013A439234C765500A2D508 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
-		001A5FA3234FA659004B4206 /* GameFieldTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldTarget.swift; sourceTree = "<group>"; };
+		001A5FA3234FA659004B4206 /* GameFieldTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldTargetView.swift; sourceTree = "<group>"; };
 		001A5FA5234FA6AC004B4206 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		001C104423509BB900539282 /* Boat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
 		00D8C6832340FEDC001554C0 /* secondIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D8C6862340FEDC001554C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D8C68A2340FEDC001554C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		00D8C68F2340FEDD001554C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00D8C6922340FEDD001554C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00D8C6942340FEDD001554C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00F803F9234662A200C8CECB /* GameFieldSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldSelf.swift; sourceTree = "<group>"; };
+		00F803F9234662A200C8CECB /* GameFieldSelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldSelfView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,8 @@
 			children = (
 				00134B422343E4E7004981B0 /* GameFieldViewController.swift */,
 				00134B442343E4FA004981B0 /* GameField.storyboard */,
+				00F803F9234662A200C8CECB /* GameFieldSelfView.swift */,
+				001A5FA3234FA659004B4206 /* GameFieldTargetView.swift */,
 			);
 			path = GameField;
 			sourceTree = "<group>";
@@ -63,10 +67,19 @@
 		0013A438234C762300A2D508 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				001C1043235090F000539282 /* Base */,
 				0013A439234C765500A2D508 /* GameField.swift */,
-				001A5FA5234FA6AC004B4206 /* BaseView.swift */,
+				001C104423509BB900539282 /* Boat.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		001C1043235090F000539282 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				001A5FA5234FA6AC004B4206 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		00D8C67A2340FEDC001554C0 = {
@@ -113,8 +126,6 @@
 			children = (
 				00D8C68A2340FEDC001554C0 /* ViewController.swift */,
 				00D8C68C2340FEDC001554C0 /* Main.storyboard */,
-				00F803F9234662A200C8CECB /* GameFieldSelf.swift */,
-				001A5FA3234FA659004B4206 /* GameFieldTarget.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -202,9 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D8C68B2340FEDC001554C0 /* ViewController.swift in Sources */,
-				00F803FA234662A200C8CECB /* GameFieldSelf.swift in Sources */,
+				00F803FA234662A200C8CECB /* GameFieldSelfView.swift in Sources */,
 				00134B432343E4E7004981B0 /* GameFieldViewController.swift in Sources */,
-				001A5FA4234FA659004B4206 /* GameFieldTarget.swift in Sources */,
+				001C104523509BB900539282 /* Boat.swift in Sources */,
+				001A5FA4234FA659004B4206 /* GameFieldTargetView.swift in Sources */,
 				00134B412343E49E004981B0 /* LoaderViewController.swift in Sources */,
 				0013A43A234C765500A2D508 /* GameField.swift in Sources */,
 				00D8C6872340FEDC001554C0 /* AppDelegate.swift in Sources */,

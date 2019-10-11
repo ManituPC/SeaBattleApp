@@ -10,34 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var uiViewSelf = GameFieldSelf()
-    var uiViewTarget = GameFieldTarget()
+    var uiViewSelf: GameFieldSelfView!
+    var uiViewTarget: GameFieldTargetView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let screenRect = UIScreen.main.bounds
-        let screenWidth = screenRect.size.width
-        let screenHeight = screenRect.size.height
-        
-        uiViewSelf.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight / 2)
-        uiViewTarget.frame = CGRect(x: 0, y: screenHeight / 2, width: screenWidth, height: screenHeight / 2)
-        
-        view.backgroundColor = .white
-        view.addSubview(uiViewSelf)
-        view.addSubview(uiViewTarget)
-        
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(click))
-//        uiView.addGestureRecognizer(tap)
-        
-        //self.navigationItem.title = "String"
-        
+//        uiViewSelf = GameFieldSelfView()
+//        uiViewTarget = GameFieldTargetView()
+//        
+//        let screenRect = UIScreen.main.bounds
+//        let screenWidth = screenRect.size.width
+//        let screenHeight = screenRect.size.height
+//        
+//        uiViewSelf.frame = CGRect(x: 20, y: 20, width: screenWidth - 40, height: screenHeight / 2 - 20)
+//        uiViewSelf.backgroundColor = .white
+//        uiViewTarget.frame = CGRect(x: 20, y: screenHeight / 2, width: screenWidth - 40, height: screenHeight / 2 - 20)
+//        uiViewTarget.backgroundColor = .white
+//
+//        view.backgroundColor = .purple
+//        view.addSubview(uiViewSelf)
+//        view.addSubview(uiViewTarget)
     }
-
-    
-//    @objc func click() {
-//        print("11111")
-//    }
 }
 

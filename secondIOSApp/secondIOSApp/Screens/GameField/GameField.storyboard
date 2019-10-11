@@ -15,19 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="31g-mi-lwI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3D-ee-5e5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="m3D-ee-5e5" firstAttribute="leading" secondItem="kmi-Ua-YjO" secondAttribute="leading" id="AS4-dT-BEH"/>
-                            <constraint firstItem="m3D-ee-5e5" firstAttribute="top" secondItem="kmi-Ua-YjO" secondAttribute="top" id="Isk-si-gkB"/>
-                            <constraint firstItem="m3D-ee-5e5" firstAttribute="trailing" secondItem="kmi-Ua-YjO" secondAttribute="trailing" id="vXM-Tn-CfR"/>
-                            <constraint firstItem="m3D-ee-5e5" firstAttribute="bottom" secondItem="kmi-Ua-YjO" secondAttribute="bottom" id="wpv-q8-6ae"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kmi-Ua-YjO"/>
                     </view>
                 </viewController>

@@ -9,10 +9,9 @@
 import UIKit
 
 @IBDesignable
-class GameFieldTarget: BaseView {
+class GameFieldTargetView: BaseView {
 
     override func draw(_ rect: CGRect) {
-        let rect = CGRect(x: 0, y: rect.height / 2, width: rect.width, height: rect.height / 2)
         drawGameField(rect: rect)
     }
 }

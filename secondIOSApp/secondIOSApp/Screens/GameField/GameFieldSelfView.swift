@@ -9,10 +9,9 @@
 import UIKit
 
 @IBDesignable
-class GameFieldSelf: BaseView {
+class GameFieldSelfView: BaseView {
     
     override func draw(_ rect: CGRect) {
-        let rect = CGRect(x: 0, y: 0, width: rect.width, height: rect.height / 2)
         drawGameField(rect: rect)
     }
 }

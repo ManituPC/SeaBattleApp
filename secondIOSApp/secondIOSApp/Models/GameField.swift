@@ -24,15 +24,7 @@ class GameField {
         var isFieldTap = false
         var blockId: Int
         var coordinateBegin: (x: CGFloat, y: CGFloat)
-        var wigth: CGFloat = 30
+        var wigth: CGFloat = 0
         var color: UIColor?
     }
-}
-
-
-class Boad {
-    var size = 0
-    let isVertical = true
-    let coordinate = Set<Int>()
-    var isAlive = true
 }

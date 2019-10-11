@@ -10,21 +10,29 @@ import UIKit
 
 class GameFieldViewController: UIViewController {
 
+    var uiViewSelf: GameFieldSelfView!
+    var uiViewTarget: GameFieldTargetView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.isHidden = true
+        
+        uiViewSelf = GameFieldSelfView()
+        uiViewTarget = GameFieldTargetView()
+        
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
+        
+        uiViewSelf.frame = CGRect(x: 20, y: 20, width: screenWidth - 40, height: screenHeight / 2 - 20)
+        uiViewSelf.backgroundColor = .white
+        uiViewTarget.frame = CGRect(x: 20, y: screenHeight / 2, width: screenWidth - 40, height: screenHeight / 2 - 20)
+        uiViewTarget.backgroundColor = .white
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .purple
+        view.addSubview(uiViewSelf)
+        view.addSubview(uiViewTarget)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

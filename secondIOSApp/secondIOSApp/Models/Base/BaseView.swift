@@ -28,7 +28,7 @@ class BaseView: UIView {
 
     // draw Game filed
     func drawGameField(rect: CGRect) {
-        let outPadding: CGFloat = 20
+        let outPadding: CGFloat = 10
         let squareWigth: CGFloat = (rect.height - outPadding * 2) / CGFloat(gameField.size.height)
         let x: CGFloat = rect.origin.x + (rect.width - squareWigth * CGFloat(gameField.size.wigth)) / 2
         let y: CGFloat = rect.origin.y + outPadding
