@@ -19,14 +19,18 @@ class GameFieldSelfView: BaseView {
     func addBoats() -> [Boat] {
         var boatsList = [Boat]()
         
-        var boat = Boat()
-        boat.size = 1
-        
-        boatsList.append(boat)
-        boatsList.append(boat)
-        boatsList.append(boat)
-        boatsList.append(boat)
-        
+        for boatType in gameController.boatType {
+            var boat = Boat()
+            
+            boat.size = boatType.key
+            print("boat size is \(boat.size)")
+            
+            for var i in 1...boatType.value {
+                boatsList.append(boat)
+                print("number for boat size \(boat.size) is \(i)")
+                i += 1
+            }
+        }
         
         return boatsList
     }

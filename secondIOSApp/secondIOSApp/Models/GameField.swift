@@ -22,6 +22,7 @@ class GameField {
     
     struct Field {
         var isFieldTap = false
+        var isEmpty = true
         var blockId: Int
         var coordinateBegin: (x: CGFloat, y: CGFloat)
         var wigth: CGFloat = 0

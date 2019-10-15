@@ -11,6 +11,7 @@ import UIKit
 
 class BaseView: UIView {
     
+    let gameController = GameController()
     let gameField = GameField()
     var squareID = 0
     
@@ -87,17 +88,45 @@ class BaseView: UIView {
     }
     
     func drawBoat(rect: CGRect) {
-        let color = UIColor.yellow
-
         if gameField.boadsList.count > 0 {
             for boat in gameField.boadsList {
-                let number = Int.random(in: 0 ..< 99)
+                let color = UIColor.random()
+                let bool = Bool.random()
+                let x = (gameField.fieldsList.last?.coordinateBegin.x) ?? 0.0
+                let y = (gameField.fieldsList.last?.coordinateBegin.y) ?? 0.0
+                var number = gameController.getRandomSquare(gameField: gameField)
+                //var index = 1
+                let boatWigth = gameField.fieldsList[number].wigth
+                let boatHeight = gameField.fieldsList[number].wigth * CGFloat(boat.size)
+                boat.isVertical = bool
                 boat.coordinate = gameField.fieldsList[number].coordinateBegin
                 
-                let pathRect = CGRect(x: boat.coordinate.x, y: boat.coordinate.y, width: gameField.fieldsList[number].wigth, height: gameField.fieldsList[number].wigth)
+                var pathRect = CGRect()
+                
+                    switch boat.isVertical {
+                    case true:
+                        loopY:
+                        if (boat.coordinate.y + boatHeight) > y {
+                            let raznica = (boat.coordinate.y + boatHeight) - (y + boatWigth)
+                            boat.coordinate.y -= raznica
+                        }
+                        // TODO: add checkin isEmpty for gameField.field
+                        
+                        pathRect = CGRect(x: boat.coordinate.x, y: boat.coordinate.y, width: boatWigth, height: boatHeight)
+                    case false:
+                        if (boat.coordinate.x + boatHeight) > x {
+                            let raznica = (boat.coordinate.x + boatHeight) - (x + boatWigth)
+                            boat.coordinate.x -= raznica
+                        }
+                        pathRect = CGRect(x: boat.coordinate.x, y: boat.coordinate.y, width: boatHeight, height: boatWigth)
+                    }
+                
                 let path = UIBezierPath(rect: pathRect)
                 color.setFill()
                 path.fill()
+                gameField.fieldsList[number].isEmpty = false
+                    //index += 1
+                //}
             }
         }
     }
@@ -128,7 +157,7 @@ class BaseView: UIView {
     }
     
     
-    // внизу то всё для учебы
+    // ======= is for example =======
     
     private func drawManyRectangle(rect: CGRect) {
         // Many rectangle
@@ -281,5 +310,20 @@ class BaseView: UIView {
         path1.lineWidth = 2
         color1.setStroke()
         path1.stroke()
+    }
+}
+
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
+    }
+}
+
+extension UIColor {
+    static func random() -> UIColor {
+        return UIColor(red:   .random(),
+                       green: .random(),
+                       blue:  .random(),
+                       alpha: 1.0)
     }
 }
