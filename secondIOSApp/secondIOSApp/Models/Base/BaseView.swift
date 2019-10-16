@@ -102,16 +102,49 @@ class BaseView: UIView {
                 boat.coordinate = gameField.fieldsList[number].coordinateBegin
                 
                 var pathRect = CGRect()
+                var done = false
+                var nYes = [Int]()
                 
                     switch boat.isVertical {
                     case true:
-                        loopY:
-                        if (boat.coordinate.y + boatHeight) > y {
-                            let raznica = (boat.coordinate.y + boatHeight) - (y + boatWigth)
-                            boat.coordinate.y -= raznica
+                        repeat {
+                            if (boat.coordinate.y + boatHeight) > (y + boatWigth) {
+                                let raznica = ((boat.coordinate.y + boatHeight) - (y + boatWigth))
+                                print("raznica = \(boat.coordinate.y) + \(boatHeight) - \(y) + \(boatWigth) = \(raznica)")
+                                boat.coordinate.y -= raznica
+                                let countSquare = raznica / boatWigth
+                                print(Int(ceil(countSquare)))
+                                
+                                for i in 1...Int(ceil(countSquare)) {
+                                    print("!!!!!!!!!!!!!!!!!!!!!!!\nfor boat \(boat.size) check coordinate")
+                                    print("for boat begin in square #\(number)")
+                                    print("i = \(i)")
+
+                                    number = number - i * 10
+                                    print("for boat \(boat.size) bool = \(gameField.fieldsList[number].isEmpty)")
+                                    if gameField.fieldsList[number].isEmpty {
+                                        nYes.append(1)
+                                        print("nYes count = \(nYes.count)")
+                                        if nYes.count == Int(countSquare) {
+                                            done = true
+                                        }
+                                    } else {
+                                        number = gameController.getRandomSquare(gameField: gameField)
+                                        boat.coordinate = gameField.fieldsList[number].coordinateBegin
+                                    }
+                                }
+                            } else {
+                                done = true
+                                nYes.removeAll()
+                            }
+                        } while !done
+                        //FIXME: add marker isEmpty for field square
+                        for index in 1...boat.size {
+                            print("for \(number) isEmpty = false")
+                            gameField.fieldsList[number].isEmpty = false
+                            number += 10
                         }
-                        // TODO: add checkin isEmpty for gameField.field
-                        
+
                         pathRect = CGRect(x: boat.coordinate.x, y: boat.coordinate.y, width: boatWigth, height: boatHeight)
                     case false:
                         if (boat.coordinate.x + boatHeight) > x {
@@ -124,7 +157,6 @@ class BaseView: UIView {
                 let path = UIBezierPath(rect: pathRect)
                 color.setFill()
                 path.fill()
-                gameField.fieldsList[number].isEmpty = false
                     //index += 1
                 //}
             }
