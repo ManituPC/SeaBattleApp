@@ -107,49 +107,142 @@ class BaseView: UIView {
                 
                     switch boat.isVertical {
                     case true:
+                        print("\n*************** New boat \(boat.size) VERTICAL ***************")
                         repeat {
-                            if (boat.coordinate.y + boatHeight) > (y + boatWigth) {
+                            if (boat.coordinate.y + boatHeight) > (y + boatWigth) && boat.size > 1 {
                                 let raznica = ((boat.coordinate.y + boatHeight) - (y + boatWigth))
-                                print("raznica = \(boat.coordinate.y) + \(boatHeight) - \(y) + \(boatWigth) = \(raznica)")
+                                print("raznica po Y = \(boat.coordinate.y) + \(boatHeight) - \(y) + \(boatWigth) = \(raznica)")
                                 boat.coordinate.y -= raznica
-                                let countSquare = raznica / boatWigth
-                                print(Int(ceil(countSquare)))
+                                let countSquare = Int(ceil(raznica / boatWigth))
+                                print("move to \(countSquare) square")
                                 
-                                for i in 1...Int(ceil(countSquare)) {
-                                    print("!!!!!!!!!!!!!!!!!!!!!!!\nfor boat \(boat.size) check coordinate")
+                                for var i in 1...countSquare {
+                                    print("!!!!!!!!!!!!!!!!!!!!!!! boat.Y > Y \nfor boat \(boat.size) check coordinate")
                                     print("for boat begin in square #\(number)")
                                     print("i = \(i)")
 
-                                    number = number - i * 10
                                     print("for boat \(boat.size) bool = \(gameField.fieldsList[number].isEmpty)")
                                     if gameField.fieldsList[number].isEmpty {
                                         nYes.append(1)
                                         print("nYes count = \(nYes.count)")
-                                        if nYes.count == Int(countSquare) {
+                                        number = number - 10
+                                        if nYes.count == countSquare {
                                             done = true
                                         }
                                     } else {
                                         number = gameController.getRandomSquare(gameField: gameField)
                                         boat.coordinate = gameField.fieldsList[number].coordinateBegin
+                                        i = 1
                                     }
                                 }
                             } else {
-                                done = true
-                                nYes.removeAll()
+                                for var i in 1...boat.size {
+                                    // FIXME:
+                                    /*
+                                     !!!!!!!!!!!!!!!!!!!!!!! boat.Y < Y
+                                     for boat 4 check coordinate
+                                     for boat begin in square #9
+                                     i = 1
+                                     for boat 4 bool = true
+                                     nYes count = 1
+                                     !!!!!!!!!!!!!!!!!!!!!!! boat.Y < Y
+                                     for boat 4 check coordinate
+                                     for boat begin in square #-1
+                                     i = 2
+                                     Fatal error: Index out of range
+                                     2019-10-21 20:13:37.256139+0300 secondIOSApp[23334:274148] Fatal error: Index out of range
+                                     */
+                                print("!!!!!!!!!!!!!!!!!!!!!!! boat.Y < Y \nfor boat \(boat.size) check coordinate")
+                                print("for boat begin in square #\(number)")
+                                print("i = \(i)")
+
+                                print("for boat \(boat.size) bool = \(gameField.fieldsList[number].isEmpty)")
+                                if gameField.fieldsList[number].isEmpty {
+                                    nYes.append(1)
+                                    print("nYes count = \(nYes.count)")
+                                    number = number - 10
+                                    if nYes.count == boat.size {
+                                        done = true
+                                        nYes.removeAll()
+                                    }
+                                } else {
+                                    number = gameController.getRandomSquare(gameField: gameField)
+                                    boat.coordinate = gameField.fieldsList[number].coordinateBegin
+                                    i = 1
+                                }
+                                }
+                                    
+//                                done = true
+//                                nYes.removeAll()
                             }
                         } while !done
                         //FIXME: add marker isEmpty for field square
                         for index in 1...boat.size {
-                            print("for \(number) isEmpty = false")
+                            print("Y: for \(number) isEmpty = false")
                             gameField.fieldsList[number].isEmpty = false
                             number += 10
                         }
-
                         pathRect = CGRect(x: boat.coordinate.x, y: boat.coordinate.y, width: boatWigth, height: boatHeight)
+                        
                     case false:
-                        if (boat.coordinate.x + boatHeight) > x {
-                            let raznica = (boat.coordinate.x + boatHeight) - (x + boatWigth)
-                            boat.coordinate.x -= raznica
+                        print("\n*************** New boat \(boat.size) GORIZONTAL ***************")
+                        repeat {
+                            if (boat.coordinate.x + boatHeight) > x && boat.size > 1 {
+                                let raznica = (boat.coordinate.x + boatHeight) - (x + boatWigth)
+                                print("raznica po X = \(boat.coordinate.x) + \(boatHeight) - \(x) + \(boatWigth) = \(raznica)")
+                                boat.coordinate.x -= raznica
+                                let countSquare = Int(ceil(raznica / boatHeight))
+                                print("move to \(countSquare) square")
+                                
+                                for var i in 1...countSquare {
+                                    print("!!!!!!!!!!!!!!!!!!!!!!! boat.X > X \nfor boat \(boat.size) check coordinate")
+                                    print("for boat begin in square #\(number)")
+                                    print("i = \(i)")
+
+                                    number -= 1
+                                    print("for boat \(boat.size) bool = \(gameField.fieldsList[number].isEmpty)")
+                                    if gameField.fieldsList[number].isEmpty {
+                                        nYes.append(1)
+                                        print("nYes count = \(nYes.count) and square count = \(countSquare)")
+                                        if nYes.count == countSquare {
+                                            done = true
+                                        }
+                                    } else {
+                                        number = gameController.getRandomSquare(gameField: gameField)
+                                        boat.coordinate = gameField.fieldsList[number].coordinateBegin
+                                        i = 1
+                                    }
+                                }
+                            } else {
+                                for var i in 1...boat.size {
+                                print("!!!!!!!!!!!!!!!!!!!!!!! boat.X < X \nfor boat \(boat.size) check coordinate")
+                                print("for boat begin in square #\(number)")
+                                print("i = \(i)")
+
+                                number -= 1
+                                print("for boat \(boat.size) bool = \(gameField.fieldsList[number].isEmpty)")
+                                if gameField.fieldsList[number].isEmpty {
+                                    nYes.append(1)
+                                    print("nYes count = \(nYes.count)")
+                                    if nYes.count == boat.size {
+                                        done = true
+                                        nYes.removeAll()
+                                    }
+                                } else {
+                                    number = gameController.getRandomSquare(gameField: gameField)
+                                    boat.coordinate = gameField.fieldsList[number].coordinateBegin
+                                    i = 1
+                                }
+                                }
+//                                done = true
+//                                nYes.removeAll()
+                            }
+                            
+                        } while !done
+                        for index in 1...boat.size {
+                            print("X: for \(number) isEmpty = false")
+                            gameField.fieldsList[number].isEmpty = false
+                            number += 1
                         }
                         pathRect = CGRect(x: boat.coordinate.x, y: boat.coordinate.y, width: boatHeight, height: boatWigth)
                     }
